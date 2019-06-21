@@ -1,4 +1,7 @@
 class Portfolio < ApplicationRecord
+
+  has_many :technologies
+
   # Placed in Concern Folder
   include Placeholder
   validates_presence_of :title, :subtitle, :main_image, :thumb_image
