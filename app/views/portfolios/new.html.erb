@@ -11,6 +11,16 @@
     <%= f.text_field :subtitle %>
   </div>
 
+  <ul>
+    <!-- :technologies is knows as it is specified in the model for accepting nested attributes-->
+    <%= f.fields_for :technologies do |technology_form| %>
+      <li>
+        <%= technology_form.label :name %>
+        <%= technology_form.text_field :name %>
+      </li>
+    <% end %>
+  </ul>
+
   <div class="actions">
     <%= f.submit %>
   </div>
