@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   # resources :portfolios
 
   # Route all requests except 'show' to apis starting with portfolios
