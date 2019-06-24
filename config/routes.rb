@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
-  # resources :portfolios
+  # Route path_names changed: users/sign_in to 'login'
+  devise_for :users, path: '', path_names: {sign_in: 'login', sign_out: 'logout', sign_up: 'register'}
 
+  ## resources :portfolios
   # Route all requests except 'show' to apis starting with portfolios
   resources :portfolios, except: [:show]
   get 'portfolio/:id', to: 'portfolios#show', as: 'portfolio_show'
