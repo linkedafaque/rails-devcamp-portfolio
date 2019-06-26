@@ -24,4 +24,6 @@ class Portfolio < ApplicationRecord
     self.main_image ||= Placeholder.image_generator(400)
     self.thumb_image ||= Placeholder.image_generator(150)
   end
+
+  before_save
 end

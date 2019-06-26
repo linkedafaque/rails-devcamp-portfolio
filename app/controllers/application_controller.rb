@@ -1,5 +1,8 @@
 class ApplicationController < ActionController::Base
-  before_action :set_source
+  before_action :set_source, :configure_permitted_parameters
+
+  def configure_permitted_parameters
+  end
 
   def set_source
     session[:source] = params[:q] if params[:q]
